@@ -1,0 +1,169 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin two-columns-grid -->
+<div class="two-columns-grid">
+	<!-- begin db-request -->
+	<div class="db-request">
+		<div class="db-request__inner">
+			<h2>Подтянуть данные из базы:</h2>
+			<form class="left-form" action="#" method="post">
+				<div class="two-columns">
+					<div class="product">
+						<label for="product">Продукт:</label><br>
+						<select name="product" id="product">
+							<option disabled selected>--</option>
+							<option>Choco Lite</option>
+							<option>Eracto</option>
+							<option>Germitox</option>
+							<option>Titan Premium</option>
+						</select>
+					</div>
+					<div class="geo">
+						<label for="lang">Гео:</label><br>
+						<select name="lang" id="lang">
+							<option disabled selected>--</option>
+							<option>es</option>
+							<option>bg</option>
+							<option>cz</option>
+							<option>fr</option>
+							<option>de</option>
+							<option>at</option>
+							<option>gr</option>
+							<option>cy</option>
+							<option>hu</option>
+							<option>it</option>
+							<option>pl</option>
+							<option>pt</option>
+							<option>ro</option>
+							<option>sk</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<label for="stream_id">Stream ID</label><br>
+					<input id="stream_id" type="text" name="stream_id">
+				</div>
+				<div>
+					<label for="api_key">API Key</label><br>
+					<input id="api_key" type="text" name="api_key">
+				</div>
+				<div>
+					<label for="user_id">User ID</label><br>
+					<input id="user_id" type="text" name="user_id">
+				</div>
+				<div class="fb_pixel">
+					<label for="fb_pixel_enable">Нужен FB Pixel?</label>
+					<input id="fb_pixel_enable" type="checkbox" name="fb_pixel">
+				</div>
+				<div class="fb-init-input">
+					<label for="index_fb_init">fb-init для index.php</label><br>
+					<input id="index_fb_init" type="text" name="index_fb_init">
+				</div>
+				<div class="fb-init-input">
+					<label for="success_fb_init">fb-init для success.php</label><br>
+					<input id="success_fb_init" type="text" name="success_fb_init">
+				</div>
+				<input type="submit" value="Обновить" name="refresh" class="refresh-btn">
+			</form>
+		</div>
+	</div>
+	<!-- end db-request -->
+
+	<!-- begin save-data -->
+	<div class="save-data">
+		<div class="save-data__inner">
+			<h2>Сохранить данные:</h2>
+			<form class="right-form" action="assets/save.php" method="post">
+				<div>
+					<label>Продукт</label>
+					<input type="text" name="product" value="<?=$product?>">
+				</div>
+				<div>
+					<label>Offer ID</label>
+					<input type="text" name="offer_id" value="<?=$offer_id?>">
+				</div>
+				<div>
+					<label>Stream ID</label>
+					<input type="text" name="stream_id" value="<?=$stream_id?>">
+				</div>
+				<div>
+					<label>API Key</label>
+					<input type="text" name="api_key" value="<?=$api_key?>">
+				</div>
+				<div>
+					<label>User ID</label>
+					<input type="text" name="user_id" value="<?=$user_id?>">
+				</div>
+				<input type="hidden" name="fb_pixel" value="<?=$fb_pixel?>">
+				<div>
+					<label>index.php fb-init</label>
+					<input type="text" name="index_fb_init" value="<?=$index_fb_init?>">
+				</div>
+				<div>
+					<label>success.php fb-init</label>
+					<input type="text" name="success_fb_init" value="<?=$success_fb_init?>">
+				</div>
+				<div>
+					<label>Цена</label>
+					<input type="number" name="price" value="<?=$price*1?>">
+				</div>
+				<div>
+					<label>Старая цена</label>
+					<input type="number" name="old_price" value="<?=$price*2?>">
+				</div>
+				<div>
+					<label>Валюта:</label>
+					<input type="text" name="currency" value="<?=$currency?>">
+				</div>
+				<div>
+					<label>"Цена"</label>
+					<input type="text" name="price_txt" value="<?=$price_txt?>">
+				</div>
+				<div>
+					<label>"Старая цена"</label>
+					<input type="text" name="prev_price" value="<?=$prev_price?>">
+				</div>
+				<div>
+					<label>"Имя"</label>
+					<input type="text" name="user_name" value="<?=$user_name?>">
+				</div>
+				<div>
+					<label>"Телефонный номер"</label>
+					<input type="text" name="user_phone" value="<?=$user_phone?>">
+				</div>
+				<div>
+					<label>"Заказать сейчас"</label>
+					<input type="text" name="order_txt" value="<?=$order_txt?>">
+				</div>
+				<div>
+					<label>"СПАСИБО!"</label>
+					<input type="text" name="title" value="<?=$title?>">
+				</div>
+				<div>
+					<label>"Ваша заявка принята"</label>
+					<input type="text" name="title_h2" value="<?=$title_h2?>">
+				</div>
+				<div>
+					<label>"Мы с Вами свяжемся!"</label>
+					<input type="text" name="title_h3" value="<?=$title_h3?>">
+				</div>
+				<div>
+					<label>"Обратно на сайт"</label>
+					<input type="text" name="back_btn" value="<?=$back_btn?>">
+				</div>
+				<div style="text-align: center;">
+					<input type="submit" value="Сохранить" class="save-btn">
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- end save-data -->
+</div>
+<!-- end two-columns-grid -->
+
+{% endblock %}

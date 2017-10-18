@@ -1,0 +1,7 @@
+ProjectTitle: iframe-generator
+
+PageList:
+- file: page.html
+  ready: 50
+- file: download.html
+  ready: 50
